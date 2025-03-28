@@ -113,7 +113,6 @@ export default function Profile() {
         if (!postsRes.ok) {
           throw new Error("Failed to fetch posts");
         }
-        console.log(postsData)
 
 
         // Filter posts into categories

@@ -20,7 +20,6 @@ export default function Navbar() {
           try {
             const res = await fetch(`/api/getLoggedUser?_id=${_id}&userId=${userId}`);
             const data = await res.json();
-            console.log(data);
             if (res.ok) {
               setIsLoggedIn(true);
               setUser(data);

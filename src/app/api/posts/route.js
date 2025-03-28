@@ -10,9 +10,6 @@ export async function GET(req) {
     const type = req.nextUrl.searchParams.get("type"); // Get type from query params
     let posts;
 
-    console.log('userId:', userId);
-    console.log('type:', type);
-
     if (userId === "all") {
       if (type) {
         // If type is provided, fetch posts of that type
