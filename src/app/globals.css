@@ -63,7 +63,7 @@ body {
 .glitch-span:last-of-type {
   animation: glitch-after 10s infinite;
 }
-
+/*
 @keyframes glitch-before {
   0% {
     transform: translate(0);
@@ -111,7 +111,8 @@ body {
     transform: translate(0);
     opacity: 0.8;
   }
-}
+}*/
+
 .app-div::-webkit-scrollbar {
   display: none;
 }
