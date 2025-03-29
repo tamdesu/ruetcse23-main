@@ -72,9 +72,10 @@ export default function Home() {
           setUser(data);
         }
         catch (error) {
-          console.error("Error fetching user:", error); 
+          console.error("Error fetching user:", error);
         }
       }
+      fetchUser();
     }
   }, []);
 
@@ -129,11 +130,11 @@ export default function Home() {
             {
               user && user.userId === localStorage.getItem("userId") && (
                 <button
-                className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-md transition"
-                onClick={handleAddProject}
-              >
-                Add Resource +
-              </button> 
+              className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-md transition"
+              onClick={handleAddProject}
+            >
+              Add Resource +
+            </button>
               )
             }
           </div>
