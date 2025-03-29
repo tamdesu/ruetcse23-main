@@ -9,6 +9,7 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [user, setUser] = useState(null);
 
   const formattedDate = (dateString) => {
     const date = new Date(dateString); // Convert ISO string to Date object
@@ -59,6 +60,22 @@ export default function Home() {
       }
     }
     fetchProjects();
+    if(typeof window !== "undefined"){
+      async function fetchUser() {
+        try {
+          const userId = localStorage.getItem("userId");
+          const res = await fetch(`/api/user?userId=${userId}`);
+          if (!res.ok) {
+            throw new Error("Failed to fetch user");
+          }
+          const data = await res.json();
+          setUser(data);
+        }
+        catch (error) {
+          console.error("Error fetching user:", error); 
+        }
+      }
+    }
   }, []);
 
   const handleAddProject = () => {
@@ -109,12 +126,16 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center text-white p-6 space-y-6">
           <div className="w-full mt-8 flex justify-between items-center max-w-[800px]">
             <h2 className="text-3xl font-bold text-white">All Resources</h2>
-            <button
-              className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-md transition"
-              onClick={handleAddProject}
-            >
-              Add Resource +
-            </button>
+            {
+              user && user.userId === localStorage.getItem("userId") && (
+                <button
+                className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-md transition"
+                onClick={handleAddProject}
+              >
+                Add Resource +
+              </button> 
+              )
+            }
           </div>
           {loading ? (
             <p className="text-center text-white">Loading Resources...</p>
