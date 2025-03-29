@@ -6,9 +6,9 @@ const UserSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   name: { type: String, required: true },
   email: { type: String, required: true },
-  description: { type: String, required: true },
+  description: { type: String, default: "" },
   password: { type: String, required: true },
-  image: { type: String, required: true },
+  image: { type: String, default: ""},
 });
 
 // Pre-save hook to hash the password before saving the user

@@ -53,7 +53,7 @@ export default function Navbar() {
             href={`/profile/${user.userId}`}
           ><span className="hidden sm:block text-sm">{user.name}</span>
             <img
-              src={user.image || "https://via.placeholder.com/100"}
+              src={user.image || "https://media.istockphoto.com/id/2151669184/vector/vector-flat-illustration-in-grayscale-avatar-user-profile-person-icon-gender-neutral.jpg?s=612x612&w=0&k=20&c=UEa7oHoOL30ynvmJzSCIPrwwopJdfqzBs0q69ezQoM8="}
               alt="Profile Picture"
               width="50"
               height="50"

@@ -175,7 +175,7 @@ export default function Profile() {
           {/* Profile Picture */}
           <div className="relative flex flex-col gap-2 items-center">
             <img
-              src={userData.image || "https://via.placeholder.com/100"}
+              src={userData.image || "https://media.istockphoto.com/id/2151669184/vector/vector-flat-illustration-in-grayscale-avatar-user-profile-person-icon-gender-neutral.jpg?s=612x612&w=0&k=20&c=UEa7oHoOL30ynvmJzSCIPrwwopJdfqzBs0q69ezQoM8="}
               alt="Profile Picture"
               width="100"
               height="100"

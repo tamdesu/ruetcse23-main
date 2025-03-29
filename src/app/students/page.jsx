@@ -43,7 +43,7 @@ export default function Home() {
               <Link key={student._id} href={`/profile/${student.userId}`}>
                 <div className="bg-gray-800 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
                   <Image
-                    src={student.image}
+                    src={student.image || "https://media.istockphoto.com/id/2151669184/vector/vector-flat-illustration-in-grayscale-avatar-user-profile-person-icon-gender-neutral.jpg?s=612x612&w=0&k=20&c=UEa7oHoOL30ynvmJzSCIPrwwopJdfqzBs0q69ezQoM8="}
                     alt={student.name}
                     width={200}
                     height={200}
